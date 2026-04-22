@@ -30,21 +30,39 @@
         let compValue = getComputerChoice()
         let HumanValue = getHumanChoice()
 
-        if compValue == 0 && HumanValue == "rock"{
+        if (compValue == 0 && HumanValue == "rock"){
             HumanScore += 1
-        } else if compValue == 1 && HumanValue == "paper"{
+            let message = "You Win"
+        } else if (compValue == 1 && HumanValue == "paper"){
             HumanScore += 1
-        } else if compValue == 2 && HumanValue == "scissors"{
+            let message = "You Win"
+        } else if (compValue == 2 && HumanValue == "scissors"){
             HumanScore +=1
+            let message = "You Win"
         } else {
             ComputerScore += 1
+            let message = "You lose"
         }
 
-        return "You have " +HumanScore + "and computer has " + ComputerScore
+        return message 
         }
     
-    console.log(playround())
-        
+   function PlayGame(){
+        playround()
+        playround()
+        playround()
+        playround()
+        playround()
+
+        if (ComputerScore >= HumanScore){
+            let finalMessage = "you lost"
+        } else{
+            let finalMessage = "you won"
+        }
+        return "your points: " + HumanScore + " computer points: "+ ComputerScore+ " "+ finalMessage
+
+   }
+        console.log(PlayGame())
     
   </script>
 
