@@ -25,41 +25,43 @@
 
     let HumanScore = 0
     let ComputerScore = 0
-
+  message = " "
     function playround(){
         let compValue = getComputerChoice()
         let HumanValue = getHumanChoice()
 
         if (compValue == 0 && HumanValue == "rock"){
             HumanScore += 1
-            let message = "You Win"
+            message = " You Win "
         } else if (compValue == 1 && HumanValue == "paper"){
             HumanScore += 1
-            let message = "You Win"
+            message = " You Win "
         } else if (compValue == 2 && HumanValue == "scissors"){
             HumanScore +=1
-            let message = "You Win"
+            message = " You Win "
         } else {
-            ComputerScore += 1
-            let message = "You lose"
+            ComputerScore += 1 
+            message = " You lose "
         }
 
         return message 
+        
         }
-    
+    let finalMessage = " "
    function PlayGame(){
-        playround()
-        playround()
-        playround()
-        playround()
-        playround()
+        game1 = playround()
+        game2 = playround()
+        game3 = playround()
+        game4 = playround()
+        game5 = playround()
 
         if (ComputerScore >= HumanScore){
-            let finalMessage = "you lost"
+            finalMessage = "you lost"
         } else{
-            let finalMessage = "you won"
+            finalMessage = "you won"
         }
-        return "your points: " + HumanScore + " computer points: "+ ComputerScore+ " "+ finalMessage
+
+        return game1 + game2 + game3+ game4 +game5 + " your points: " + HumanScore + " computer points: "+ ComputerScore+ " "+ finalMessage
 
    }
         console.log(PlayGame())
