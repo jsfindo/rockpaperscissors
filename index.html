@@ -25,35 +25,61 @@
 
     let HumanScore = 0
     let ComputerScore = 0
-  message = " "
+ let message = ""
+     const mess = document.createElement( "p")
+     
     function playround(){
-        let compValue = getComputerChoice()
-        let HumanValue = getHumanChoice()
+
+      let compValue =getComputerChoice()
+       
 
         if (compValue == 0 && HumanValue == "rock"){
             HumanScore += 1
             message = " You Win "
         } else if (compValue == 1 && HumanValue == "paper"){
             HumanScore += 1
-            message = " You Win "
+            message = "you win"
         } else if (compValue == 2 && HumanValue == "scissors"){
             HumanScore +=1
             message = " You Win "
+        }else if(( compValue == 0 && HumanValue == "scissors")||(compValue == 1 && HumanValue == "rock") || (compValue == 2 && HumanValue ==  "paper")){
+            message ="tie"
         } else {
             ComputerScore += 1 
             message = " You lose "
         }
+            function reset(){
+        HumanScore =0
+        ComputerScore = 0
+     }
+            if (HumanScore == 5){
+        winmess.innerText ="you won press reset to reset"
+        document.body.appendChild(winmess)
+        document.body.appendChild(resetbtn)
+        resetbtn.onclick = reset
+     }
 
-        return message 
+     if (ComputerScore == 5){
+        winmess.innerText ="you lost press reset to reset"
+        document.body.appendChild(winmess)
+        document.body.appendChild(resetbtn)
+        resetbtn.onclick = reset
+     }
+
+
+         score.innerText = "your score is " + HumanScore+" and the computers score is " + ComputerScore
+     
+        return mess.innerText = message
         
         }
     let finalMessage = " "
-   function PlayGame(){
-        game1 = playround()
+   //*function PlayGame(){
+        /*game1 = playround()
         game2 = playround()
         game3 = playround()
-        game4 = playround()
-        game5 = playround()
+        game4 = playrou
+     
+        game5 = playrmessage
 
         if (ComputerScore >= HumanScore){
             finalMessage = "you lost"
@@ -63,9 +89,55 @@
 
         return game1 + game2 + game3+ game4 +game5 + " your points: " + HumanScore + " computer points: "+ ComputerScore+ " "+ finalMessage
 
-   }
-        console.log(PlayGame())
+   }*/
+
+
+      let HumanValue= ""
+     const butnR = document.createElement("button")
+
+     butnR.innerText ="rock"
+     butnR.addEventListener('click', () =>{
+         HumanValue = "rock"
+     })
+
+   
+
+     const butnS = document.createElement("button")
+getComputerChoice()
+     butnS.innerText ="scissors"
+     butnS.addEventListener('click', () =>{
+         HumanValue = "scissors"
+     })
+
+     const butnp=document.createElement("button")
+
+     butnp.innerText ="paper"
+     butnp.addEventListener('click', () =>{
+         HumanValue = "paper"
+     })
+     const score = document.createElement("p")
     
+     document.body.appendChild(butnR);
+     document.body.appendChild(butnS);
+     document.body.appendChild(butnp);
+     document.body.appendChild(mess)
+     document.body.appendChild(score)
+
+
+
+
+  butnR.onclick =playround
+     butnS.onclick =playround
+     butnp.onclick =playround
+
+     const resetbtn = document.createElement("button")
+     resetbtn.innerText ="reset"
+
+     
+
+        const winmess = document.createElement("p")
+     
+
   </script>
 
 </body>
